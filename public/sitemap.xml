@@ -102,24 +102,6 @@
   
     
     <url>
-      <loc>http://localhost:1313/seasons/friends-izle-1.sezon-16.b%C3%B6l%C3%BCm/</loc>
-      <lastmod>2026-02-02T00:00:00Z</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:1313/seasons/friends-izle-1.sezon-17.b%C3%B6l%C3%BCm/</loc>
-      <lastmod>2026-02-02T00:00:00Z</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    
-  
-    
-    <url>
       <loc>http://localhost:1313/seasons/friends-izle-1.sezon-17.b%C3%B6l%C3%BCm/</loc>
       <lastmod>2026-02-02T00:00:00Z</lastmod>
       <changefreq>weekly</changefreq>
@@ -292,6 +274,24 @@
     
     <url>
       <loc>http://localhost:1313/seasons/friends-izle-2.sezon-15.b%C3%B6l%C3%BCm/</loc>
+      <lastmod>2026-02-02T00:00:00Z</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:1313/seasons/friends-izle-2.sezon-16.b%C3%B6l%C3%BCm/</loc>
+      <lastmod>2026-02-02T00:00:00Z</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:1313/seasons/friends-izle-2.sezon-17.b%C3%B6l%C3%BCm/</loc>
       <lastmod>2026-02-02T00:00:00Z</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
