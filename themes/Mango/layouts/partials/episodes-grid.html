@@ -1,0 +1,14 @@
+<div class="episodes-grid" id="episodesGrid" role="list">
+    {{ $allEpisodes := where .Site.RegularPages "Section" "seasons" }}
+    {{ if eq (len $allEpisodes) 0 }}
+        <p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #666;">
+            No episodes found. Please add episode content files.
+        </p>
+    {{ else }}
+        {{ range $allEpisodes }}
+            {{ if isset .Params "season" }}
+                {{ partial "episode-card.html" . }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>

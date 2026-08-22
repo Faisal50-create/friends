@@ -1,0 +1,15 @@
+<nav class="seasons-row" role="navigation" aria-label="Season navigation">
+    {{ range .Site.Data.drama.drama.seasons }}
+        {{ $seasonNum := .number }}
+        {{ $episodeCount := len (where (where $.Site.RegularPages "Section" "seasons") "Params.season" $seasonNum) }}
+        <button class="season-btn {{ if eq .number 1 }}active-season{{ end }}" 
+                data-season="{{ .number }}" 
+                data-trailer="{{ .trailer }}"
+                aria-label="Season {{ .number }} - {{ .description }}">
+            Season {{ .number }}
+            {{ if gt $episodeCount 0 }}
+                <span class="episode-count">({{ $episodeCount }})</span>
+            {{ end }}
+        </button>
+    {{ end }}
+</nav>

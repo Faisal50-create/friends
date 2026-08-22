@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Title: ONLY homepage shows site title -->
+<title>
+    {{ if .IsHome }}
+        {{ .Site.Title }}
+    {{ else }}
+        {{ .Title }}
+    {{ end }}
+</title>
+
+<!-- Description -->
+<meta name="description" content="{{ if .IsHome }}
+    {{ .Site.Params.description }}
+{{ else if .Description }}
+    {{ .Description }}
+{{ else }}
+    {{ .Title }}
+{{ end }}">
+
+<!-- Keywords -->
+<meta name="keywords" content="{{ if .IsHome }}
+    {{ .Site.Params.keywords }}
+{{ else if .Params.keywords }}
+    {{ delimit .Params.keywords ", " }}
+{{ else }}
+    {{ .Title }}
+{{ end }}">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Structured Data - Only Homepage -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "TVSeries",
+    "name": "{{ .Site.Data.drama.drama.name }}",
+    "description": "{{ .Site.Data.drama.drama.description }}"
+}
+</script>
+{{ end }}

@@ -1,0 +1,27 @@
+<a href="{{ .Permalink }}" class="episode-card-link" role="listitem" data-season="{{ .Params.season }}" data-episode="{{ .Params.episode }}">
+    <div class="episode-card">
+        <div class="episode-feature">
+            {{ if .Params.image }}
+                <img src="{{ .Params.image | relURL }}" 
+                     alt="{{ .Title }} - feature image" 
+                     loading="lazy" 
+                     width="300" 
+                     height="169">
+            {{ else }}
+                <span class="fallback-emoji" aria-hidden="true">🎞️</span>
+            {{ end }}
+        </div>
+        <div class="episode-title">{{ .Title }}</div>
+        <div class="episode-meta">
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+            <span class="season-label">S{{ .Params.season }}</span>
+            <span class="episode-author" title="{{ .Params.author }}">
+                {{ with .Params.author }}
+                    {{ . }}
+                {{ else }}
+                    Staff
+                {{ end }}
+            </span>
+        </div>
+    </div>
+</a>

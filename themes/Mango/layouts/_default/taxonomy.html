@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <div class="page-content" style="max-width:900px;width:100%;padding:2rem 1rem;margin:0 auto;">
+    <h1 style="color:#e94560;font-size:2rem;margin-bottom:1.5rem;border-bottom:2px solid rgba(233,69,96,0.2);padding-bottom:0.5rem;">
+      {{ .Title }}
+    </h1>
+    
+    <div style="color:#b0b0c0;font-size:1rem;line-height:1.8;">
+      {{ .Content }}
+      
+      {{ if .Data.Terms }}
+        <ul style="list-style:none;padding:0;margin-top:1.5rem;">
+          {{ range $key, $value := .Data.Terms }}
+            <li style="padding:0.5rem 0;border-bottom:1px solid rgba(233,69,96,0.08);">
+              <a href="{{ $.RelPermalink }}{{ $key | urlize }}/" 
+                 style="color:#e94560;text-decoration:none;font-weight:500;">
+                {{ $key }}
+              </a>
+              <span style="color:#606070;font-size:0.8rem;margin-left:0.5rem;">
+                ({{ len $value }})
+              </span>
+            </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p style="color:#808090;margin-top:1rem;">No taxonomy items found.</p>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

@@ -1,0 +1,70 @@
+baseURL = "https://eternal-legacy-drama.example.com/"
+title = "Friends İzle – Friends Türkçe İzle"
+languageCode = "tr"
+theme = "Mango"
+
+# SEO Settings
+[params]
+  description = "Friends izle. Friends dizisini Türkçe altyazılı ve Türkçe dublaj seçenekleriyle keşfedin. Tüm sezonlar, bölümler, karakterler ve Friends hakkında bilgiler tek yerde."
+  keywords = "Friends izle, Friends Türkçe izle, Friends dizisi izle, Friends Türkçe altyazılı izle"
+  author = "Drama Hub Productions"
+  image = "/images/og-image.jpg"
+
+# Performance Settings
+[build]
+  writeStats = true
+
+# Minify for faster loading
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# Pagination settings
+[pagination]
+  pagerSize = 10
+
+# Menu Configuration
+[[menu.main]]
+  identifier = "Anasayfa"
+  name = "Anasayfa"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "Iletişim"
+  name = "Iletişim"
+  url = "/iletişim/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "Gizlilik Politikası"
+  name = "Gizlilik Politikası"
+  url = "/gizlilik politikası/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "DMCA"
+  name = "DMCA"
+  url = "/dmca/"
+  weight = 4
+
+# Output formats
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+# Media types
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
+
+# Permalinks
+[permalinks]
+  seasons = "/seasons/:slug/"
+  episodes = "/episodes/:slug/"
+
+  [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

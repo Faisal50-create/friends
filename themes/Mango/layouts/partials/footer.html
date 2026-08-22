@@ -1,0 +1,31 @@
+<footer style="background:#fff;border-top:1px solid #eee;padding:20px 0;margin-top:30px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+            <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap;justify-content:center;flex:1;">
+                <span style="font-size:0.85rem;color:#7f7568;">&copy; {{ now.Format "2006" }} <strong style="color:#b45f3b;">Friends İzle</strong></span>
+                <a href="mailto:info@example.com" style="font-size:0.85rem;color:#7f7568;text-decoration:none;">📧 info@example.com</a>
+            </div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;flex:1;">
+                <a href="/" style="font-size:0.85rem;color:#7f7568;text-decoration:none;">Anasayfa</a>
+                <a href="/iletişim/" style="font-size:0.85rem;color:#7f7568;text-decoration:none;">Iletişim</a>
+                <a href="/gizlilik-politikası/" style="font-size:0.85rem;color:#7f7568;text-decoration:none;">Gizlilik Politikası</a>
+                <a href="/dmca/" style="font-size:0.85rem;color:#7f7568;text-decoration:none;">DMCA</a>
+                <a href="/" style="font-size:0.85rem;color:#b45f3b;text-decoration:none;font-weight:600;">#Friends İzle</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* Mobile: Center everything */
+        @media (max-width: 600px) {
+            footer > div > div {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            footer .footer-left,
+            footer .footer-right {
+                justify-content: center !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+</footer>

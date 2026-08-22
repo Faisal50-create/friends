@@ -1,0 +1,114 @@
+{{ define "main" }}
+<article class="episode-detail">
+    <div class="episode-header">
+        <h1>{{ .Title }}</h1>
+        <div class="episode-meta-detail">
+            <span>Season {{ .Params.season }}, Episode {{ .Params.episode }}</span>
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
+            <span>Author: {{ .Params.author | default "Staff" }}</span>
+        </div>
+    </div>
+    
+    {{ if .Params.image }}
+    <div class="episode-feature-detail">
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+    </div>
+    {{ end }}
+    
+    <div class="episode-content">
+        {{ .Content }}
+    </div>
+    
+    <div class="episode-navigation">
+        <a href="/" class="back-link">← Back to all episodes</a>
+    </div>
+</article>
+
+<style>
+.episode-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.episode-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0ebe4;
+    padding-bottom: 20px;
+}
+
+.episode-header h1 {
+    font-size: 2.5rem;
+    color: #1e1e2a;
+    margin-bottom: 10px;
+}
+
+.episode-meta-detail {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #6f6254;
+    font-size: 0.95rem;
+}
+
+.episode-feature-detail {
+    margin: 20px 0 30px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.episode-feature-detail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.episode-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c2c3a;
+}
+
+.episode-content p {
+    margin-bottom: 1.5rem;
+}
+
+.episode-navigation {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #f0ebe4;
+}
+
+.back-link {
+    display: inline-block;
+    color: #b45f3b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #8a4a2e;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .episode-detail {
+        padding: 20px;
+       
+    }
+    
+    .episode-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .episode-meta-detail {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+</style>
+{{ end }}

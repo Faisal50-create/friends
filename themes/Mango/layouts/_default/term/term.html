@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <div class="page-content" style="max-width:900px;width:100%;padding:2rem 1rem;margin:0 auto;">
+    <h1 style="color:#e94560;font-size:2rem;margin-bottom:0.5rem;border-bottom:2px solid rgba(233,69,96,0.2);padding-bottom:0.5rem;">
+      {{ .Title }}
+    </h1>
+    
+    {{ if .Params.description }}
+      <p style="color:#808090;margin-bottom:1.5rem;">{{ .Params.description }}</p>
+    {{ end }}
+    
+    <div style="color:#b0b0c0;font-size:1rem;line-height:1.8;">
+      {{ .Content }}
+      
+      {{ if .Data.Pages }}
+        <div style="display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem;">
+          {{ range .Data.Pages }}
+            <a href="{{ .RelPermalink }}" 
+               style="background:rgba(15,52,96,0.2);padding:1rem;border-radius:8px;color:#b0b0c0;text-decoration:none;border:1px solid rgba(233,69,96,0.1);transition:all 0.3s ease;">
+              <h3 style="color:#e94560;font-size:1.1rem;margin-bottom:0.3rem;">{{ .Title }}</h3>
+              {{ if .Description }}
+                <p style="font-size:0.9rem;color:#808090;">{{ .Description }}</p>
+              {{ end }}
+              <span style="font-size:0.7rem;color:#606070;">{{ .Date.Format "January 2, 2006" }}</span>
+            </a>
+          {{ end }}
+        </div>
+      {{ else }}
+        <p style="color:#808090;margin-top:1rem;">No content found for this taxonomy.</p>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

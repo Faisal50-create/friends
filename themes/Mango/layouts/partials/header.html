@@ -1,0 +1,25 @@
+<header class="site-header" role="banner">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <a href="/" class="logo-link" aria-label="{{ .Site.Title }}">
+                <img src="/images/logo.svg" 
+                     alt="{{ .Site.Title }}" 
+                     class="site-logo"
+                     width="40" 
+                     height="40"
+                     loading="eager">
+            </a>
+            <span class="logo-text">Friends<span> Izle</span></span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            ☰
+        </button>
+        <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+            {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" {{ if $.IsMenuCurrent "main" . }}class="active"{{ end }}>
+                    {{ .Name }}
+                </a>
+            {{ end }}
+        </nav>
+    </div>
+</header>

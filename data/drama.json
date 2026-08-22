@@ -1,0 +1,41 @@
+{
+  "drama": {
+    "name": "Eternal Legacy",
+    "tagline": "the drama that defines a generation",
+    "description": "Love, betrayal, and redemption — all in one timeless story.",
+    "rating": "⭐ 4.9",
+    "year": "2026",
+    "seasons": [
+      {
+        "number": 1,
+        "title": "Season 1",
+        "trailer": "https://www.youtube.com/embed/9bZkp7q19f0",
+        "description": "The beginning of an epic journey"
+      },
+      {
+        "number": 2,
+        "title": "Season 2",
+        "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "description": "Secrets unfold and relationships deepen"
+      },
+      {
+        "number": 3,
+        "title": "Season 3",
+        "trailer": "https://www.youtube.com/embed/9bZkp7q19f0",
+        "description": "New horizons and unexpected betrayals"
+      },
+      {
+        "number": 4,
+        "title": "Season 4",
+        "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "description": "The aftermath of difficult choices"
+      },
+      {
+        "number": 5,
+        "title": "Season 5",
+        "trailer": "https://www.youtube.com/embed/9bZkp7q19f0",
+        "description": "The final chapter"
+      }
+    ]
+  }
+}

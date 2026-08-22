@@ -1,0 +1,17 @@
+{{ define "main" }}
+    {{ partial "hero.html" . }}
+    
+    <section class="drama-section" id="seasons">
+        <div class="section-heading">
+            <h2><em>Friends İzle</em> · all seasons</h2>
+            <span class="season-badge">{{ .Site.Data.drama.drama.rating }} · {{ .Site.Data.drama.drama.year }}</span>
+        </div>
+        
+        {{ partial "seasons-nav.html" . }}
+        
+        <div class="player-and-cards" id="episodes">
+            {{ partial "player.html" . }}
+            {{ partial "episodes-grid.html" . }}
+        </div>
+    </section>
+{{ end }}

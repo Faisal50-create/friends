@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - {{ .Site.Title }}</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .error-404 {
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-404 h1 {
+            font-size: 5rem;
+            color: #b45f3b;
+            margin: 0;
+        }
+        .error-404 p {
+            color: #7f7568;
+            font-size: 1.2rem;
+            margin: 10px 0 30px;
+        }
+        .error-404 a {
+            background: #b45f3b;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .error-404 a:hover {
+            background: #8a4a2e;
+        }
+        @media (max-width: 600px) {
+            .error-404 h1 { font-size: 3.5rem; }
+            .error-404 p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    {{ partial "header.html" . }}
+    <main class="error-404">
+        <div style="font-size:3rem;margin-bottom:10px;">🎬</div>
+        <h1>404</h1>
+        <p>Oops! Page not found.</p>
+        <a href="{{ "/" | relURL }}">🏠 Go Home</a>
+    </main>
+    {{ partial "footer.html" . }}
+</body>
+</html>
