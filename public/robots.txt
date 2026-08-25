@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://yourdomain.com/sitemap.xml
-
 # Prioritize homepage
 Disallow: /dramas/money-heist/
 Disallow: /dramas/breaking-bad/
+
+Sitemap: https://friends-izle.online/sitemap.xml
