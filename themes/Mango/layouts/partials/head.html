@@ -487,14 +487,42 @@ body {
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Structured Data - Only Homepage -->
+<!-- Structured Data - Homepage Only -->
 {{ if .IsHome }}
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "TVSeries",
-    "name": "{{ .Site.Data.drama.drama.name }}",
-    "description": "{{ .Site.Data.drama.drama.description }}"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Title }}",
+      "description": "{{ .Site.Data.drama.drama.description }}"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ .Site.BaseURL }}#webpage",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Title }}",
+      "description": "{{ .Site.Data.drama.drama.description }}",
+      "isPartOf": {
+        "@id": "{{ .Site.BaseURL }}#website"
+      },
+      "about": {
+        "@id": "{{ .Site.BaseURL }}#tvseries"
+      },
+      "mainEntity": {
+        "@id": "{{ .Site.BaseURL }}#tvseries"
+      }
+    },
+    {
+      "@type": "TVSeries",
+      "@id": "{{ .Site.BaseURL }}#tvseries",
+      "name": "{{ .Site.Data.drama.drama.name }}",
+      "description": "{{ .Site.Data.drama.drama.description }}"
+    }
+  ]
 }
 </script>
 {{ end }}

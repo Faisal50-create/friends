@@ -91,26 +91,32 @@
         filterEpisodes(initialSeason);
 
         // Update trailer for initial season
-        const initialBtn = document.querySelector(`.season-btn[data-season="${initialSeason}"]`);
-        if (initialBtn && playerWrapper) {
-            const trailerUrl = initialBtn.dataset.trailer;
-            if (trailerUrl) {
-                let url = trailerUrl;
-                if (url.includes('youtube.com/embed/')) {
-                    const separator = url.includes('?') ? '&' : '?';
-                    url += separator + 'autoplay=0';
-                }
-                playerWrapper.innerHTML = `
-                    <iframe src="${url}" 
-                            allow="autoplay; encrypted-media" 
-                            allowfullscreen 
-                            loading="lazy"
-                            title="Season ${initialSeason} trailer">
-                    </iframe>
-                `;
-            }
+const initialBtn = document.querySelector(`.season-btn[data-season="${initialSeason}"]`);
+
+if (initialBtn && playerWrapper) {
+
+    // Direct YouTube embed video
+    const trailerUrl = 'https://www.youtube.com/embed/8wThS5WCzs4?si=ahiAqJhnZ0hR6Dbx';
+
+    if (trailerUrl) {
+        let url = trailerUrl;
+
+        if (url.includes('youtube.com/embed/')) {
+            const separator = url.includes('?') ? '&' : '?';
+            url += separator + 'autoplay=0';
         }
 
+        playerWrapper.innerHTML = `
+            <iframe
+                src="${url}"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                loading="lazy"
+                title="Season ${initialSeason} trailer">
+            </iframe>
+        `;
+    }
+}
         // Add click handlers to season buttons
         seasonBtns.forEach(btn => {
             btn.addEventListener('click', function(e) {
