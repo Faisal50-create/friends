@@ -180,5 +180,5 @@ if (initialBtn && playerWrapper) {
         });
     });
 
-    console.log('🎬 Eternal Legacy - Drama Hub loaded successfully!');
+    console.log('Friends İzle – Friends Türkçe!');
 })();

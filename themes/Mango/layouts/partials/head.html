@@ -1,34 +1,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Title: ONLY homepage shows site title -->
-<title>
-    {{ if .IsHome }}
-        {{ .Site.Title }}
-    {{ else }}
-        {{ .Title }}
-    {{ end }}
-</title>
-<meta name="google-site-verification" content="ZO1_y3hTYC2w8Arxt8Sj35VyWaU-V6Vz4yoSD5kTyts" />
-<!-- Description -->
-<meta name="description" content="{{ if .IsHome }}
-    {{ .Site.Params.description }}
-{{ else if .Description }}
-    {{ .Description }}
-{{ else }}
-    {{ .Title }}
-{{ end }}">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
 
-<!-- Keywords -->
-<meta name="keywords" content="{{ if .IsHome }}
-    {{ .Site.Params.keywords }}
-{{ else if .Params.keywords }}
-    {{ delimit .Params.keywords ", " }}
-{{ else }}
-    {{ .Title }}
-{{ end }}">
+<meta name="google-site-verification" content="ZO1_y3hTYC2w8Arxt8Sj35VyWaU-V6Vz4yoSD5kTyts">
 
-<!-- Canonical -->
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .Description }}{{ .Description }}{{ else }}{{ .Title }}{{ end }}">
+
+<meta name="keywords" content="{{ if .IsHome }}{{ .Site.Params.keywords }}{{ else if .Params.keywords }}{{ delimit .Params.keywords ", " }}{{ else }}{{ .Title }}{{ end }}">
+
 <link rel="canonical" href="{{ .Permalink }}">
 <!-- CSS -->
 <style>

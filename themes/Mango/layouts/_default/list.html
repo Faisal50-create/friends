@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<main class="container">
+    <section class="drama-section">
+        <h1 class="section-heading">{{ .Title }}</h1>
+
+        {{ if .Content }}
+            <div class="section-content">
+                {{ .Content }}
+            </div>
+        {{ end }}
+
+        <div class="episodes-grid">
+            {{ range .Pages }}
+                <article class="episode-card">
+                    <a href="{{ .RelPermalink }}" class="episode-card-link">
+                        <h2>{{ .Title }}</h2>
+
+                        {{ if .Description }}
+                            <p>{{ .Description }}</p>
+                        {{ end }}
+                    </a>
+                </article>
+            {{ end }}
+        </div>
+    </section>
+</main>
+
+{{ end }}
